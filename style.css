@@ -1,0 +1,59 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #3fa34d;
+    color: #fff;
+    padding: 10px;
+    text-align: right;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.logo{
+   width: 50px;
+   height: auto;
+}
+
+.btn {
+    margin-left: 10px;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #08605f;
+}
+
+.btn-container {
+    display: flex;
+    align-items: center;
+}
+
+.main-content {
+    width: 80%;
+    margin: 40px auto;
+}
+
+.search-div {
+    height: 100px; /* Aanpassen aan je behoeften */
+    background-color: #f1f1f1;
+    text-align: center;
+    padding-top: 50px;
+}
+
+
+footer {
+    background-color: #3fa34d;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
