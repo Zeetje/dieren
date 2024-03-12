@@ -12,10 +12,11 @@
 
 <body>
     <header>
-        <img class="logo" src="logo.png" alt="Logo"> 
+        <img class="logo" src="logo.png" alt="Logo">
         <div class="btn-container">
-        <div class="btn">Doneren</div>
-        <div class="btn">Inloggen</div>
+            <div class="btn" onclick="toonDonatieVenster()">Doneren</div>
+            <div class="btn">Inloggen</div>
+        </div>
     </header>
 
     <div class="main-content">
@@ -49,10 +50,31 @@
         </div>
     </div>
 
+    <div class="overlay" id="donatieOverlay">
+        <div class="donatie-venster">
+            <h2>Kies een donatiebedrag</h2>
+            <select id="donatieOpties">
+                <option value="5">€5</option>
+                <option value="10">€10</option>
+                <option value="20">€20</option>
+                <option value="custom">Zelf kiezen</option>
+            </select>
+
+            <div id="customBedragDiv" class="custom-bedrag-div">
+                <label for="donatieBedrag">Voer het bedrag in:</label>
+                <input type="number" id="donatieBedrag" min="1" placeholder="Voer bedrag in">
+            </div>
+
+            <button class="annuleren-btn" onclick="verbergDonatieVenster()">Annuleren</button>
+            <button class="doneren-btn" onclick="bedanktVoorDonatie()">Doneren</button>
+        </div>
+    </div>
+
     <footer>
-        &copy; 2024 Jouw Bedrijfsnaam
+        &copy; Dierenvondst
     </footer>
 
+    <script src="script.js"></script>
 </body>
 
 </html>
