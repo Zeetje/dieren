@@ -5,12 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-   <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
 </head>
-
 <body>
-    <header>
+    <header class="header">
         <img class="logo" src="img/logo.png" alt="Logo">
         <div class="btn-container">
             <div class="btn" onclick="toonDonatieVenster()">Doneren</div>
@@ -25,7 +24,7 @@
                     <h2>Login</h2>
                     <input type="text" name="username" placeholder="Username" required>
                     <input type="password" name="password" placeholder="Password" required>
-                    <button type="submit">Login</button>
+                    <button type="submit" class="btn-login">Login</button>
                 </form>
             </div>
             <div class="form-container">
@@ -33,7 +32,7 @@
                     <h2>Register</h2>
                     <input type="text" name="username" placeholder="Username" required>
                     <input type="password" name="password" placeholder="Password" required>
-                    <button type="submit">Register</button>
+                    <button type="submit" class="btn-register">Register</button>
                 </form>
             </div>
         </div>
@@ -44,36 +43,43 @@
             <h2>Wij zoeken een thuis!</h2>
         </div>
 
-        <div class="container">
-            <div class="row">
-                <div class="box">
-                    <img src="img/hond.png" alt="Image 1">
-                </div>
-                <div class="box">
-                    <img src="img/cavia.png" alt="Image 2">
-                </div>
-                <div class="box">
-                    <img src="img/konijn.png" alt="Image 3">
-                </div>
-            </div>
-            <div class="row">
-                <div class="box">
-                    <img src="img/kitten.png" alt="Image 4">
-                </div>
-                <div class="box">
-                    <img src="img/vogel.png" alt="Image 5">
-                </div>
-                <div class="box">
-                    <img src="img/schildpad.png" alt="Image 6">
-                </div>
-            </div>
+     <div class="container">
+    <div class="row">
+        <div class="box">
+            <img src="img/hond.png" alt="Image 1">
+            <div class="overlay-text">Hond</div>
         </div>
+        <div class="box">
+            <img src="img/cavia.png" alt="Image 2">
+            <div class="overlay-text">Cavia</div>
+        </div>
+        <div class="box">
+            <img src="img/konijn.png" alt="Image 3">
+            <div class="overlay-text">Konijn</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="box">
+            <img src="img/kitten.png" alt="Image 4">
+            <div class="overlay-text">Kat</div>
+        </div>
+        <div class="box">
+            <img src="img/vogel.png" alt="Image 5">
+            <div class="overlay-text">Vogel</div>
+        </div>
+        <div class="box">
+            <img src="img/schildpad.png" alt="Image 6">
+            <div class="overlay-text">Schildpad</div>
+        </div>
+    </div>
+</div>
+
     </div>
 
     <div class="overlay" id="donatieOverlay">
         <div class="donatie-venster">
             <h2>Kies een donatiebedrag</h2>
-            <select id="donatieOpties">
+            <select id="donatieOpties" class="select-donatie">
                 <option value="5">€5</option>
                 <option value="10">€10</option>
                 <option value="20">€20</option>
@@ -82,7 +88,7 @@
 
             <div id="customBedragDiv" class="custom-bedrag-div">
                 <label for="donatieBedrag">Voer het bedrag in:</label>
-                <input type="number" id="donatieBedrag" min="1" placeholder="Voer bedrag in">
+                <input type="number" id="donatieBedrag" min="1" placeholder="Voer bedrag in" class="input-custom">
             </div>
 
             <button class="annuleren-btn" onclick="verbergDonatieVenster()">Annuleren</button>
@@ -90,11 +96,10 @@
         </div>
     </div>
 
-    <footer>
+    <footer class="footer">
         &copy; Dierenvondst
     </footer>
 
     <script src="script/script.js"></script>
 </body>
-
 </html>
