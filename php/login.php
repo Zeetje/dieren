@@ -1,5 +1,5 @@
 <?php
-$host = 'localhost';
+$host = '87.210.218.52';
 $dbname = 'data'; // Vervang dit met jouw database naam
 $username = '089329'; // Vervang dit met jouw database gebruikersnaam
 $password = 'Ajaxlol16'; // Vervang dit met jouw database wachtwoord
