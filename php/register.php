@@ -1,50 +1,73 @@
 <?php
-$servername = "localhost";
-$username = "089329";
-$password = "Ajaxlol16";
-$database = "data";
-$conn = mysqli_connect($servername, $username, $password, $database);
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
+session_start();
+
+if (isset($_SESSION['username'])) {
+    header("Location: welcome.php"); // Redirect naar welkomstpagina als de gebruiker al ingelogd is
+    exit;
 }
+
+// Controleer of het formulier is verzonden
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-    $check_query = "SELECT * FROM users WHERE username = '$username'";
-    $check_result = mysqli_query($conn, $check_query);
-    if (mysqli_num_rows($check_result) > 0) {
-        $error_message = "Deze gebruikersnaam bestaat al.";
-    } else {
-        $sql = "INSERT INTO users (username, password) VALUES ('$username', '$password')";
-        if (mysqli_query($conn, $sql)) {
+    // Controleer of alle vereiste velden zijn ingediend
+    if (isset($_POST['username']) && isset($_POST['email']) && isset($_POST['password']) && isset($_POST['confirm_password'])) {
+        // Controleer of wachtwoord overeenkomt met de bevestiging van het wachtwoord
+        if ($_POST['password'] == $_POST['confirm_password']) {
+            // Hier zou je normaal gesproken de gebruikersgegevens in een database opslaan
+            // Voor dit voorbeeld wordt niets opgeslagen en wordt de registratie gewoon gesimuleerd
+            $success_message = "Registratie succesvol!";
+
+            // Redirect naar de loginpagina na succesvolle registratie
             header("Location: login.php");
+            exit;
         } else {
-            $error_message = "Er is iets mis gegaan.";
+            $error_message = "Wachtwoord komt niet overeen!";
         }
     }
-    mysqli_close($conn);
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inloggen</title>
-    <link rel="stylesheet" href="">
+    <title>Registratie</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
 </head>
 <body>
-    <div class="container">
-        <?php if(isset($error_message)): ?>
-            <div class="error"><?php echo $error_message; ?></div>
-        <?php endif; ?>
-        <form action="register.php" method="POST">
-            <h2 id="titel">Registreer</h2>
-            <input type="text" name="username" placeholder="Gebruikersnaam" required>
-            <input type="password" name="password" placeholder="Wachtwoord" required>
-            <p id="titel">Al een account? <a href="login.php">Login!</a></p>
-            <button type="submit">Registreer</button>
-        </form>
+    <header class="header">
+        <img class="logo" src="img/logo.png" alt="Logo">
+        <div class="btn-container">
+            <div class="btn" onclick="toonDonatieVenster()">Doneren</div>
+            <a href="pages/inlog.html" class="btn">Inloggen</a> 
+        </div>
+    </header>
+
+    <div class="main-content">
+        <div class="register-form-container">
+            <h2>Registreren</h2>
+            <?php
+            if (isset($error_message)) {
+                echo '<p class="error">' . $error_message . '</p>';
+            }
+            if (isset($success_message)) {
+                echo '<p class="success">' . $success_message . '</p>';
+            }
+            ?>
+            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+                <input type="text" name="username" placeholder="Gebruikersnaam" required>
+                <input type="email" name="email" placeholder="E-mailadres" required>
+                <input type="password" name="password" placeholder="Wachtwoord" required>
+                <input type="password" name="confirm_password" placeholder="Bevestig wachtwoord" required>
+                <button type="submit">Registreren</button>
+            </form>
+        </div>
     </div>
+
+    <footer class="footer">
+        &copy; Dierenvondst
+    </footer>
 </body>
 </html>
