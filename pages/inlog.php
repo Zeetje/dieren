@@ -22,7 +22,7 @@
         <!-- Inlog Formulier -->
         <div class="inlog-form">
             <h3>Inloggen</h3>
-            <form action="login.php" method="post">
+            <form action="../php/login.php" method="post">
                 <label for="username">Gebruikersnaam:</label>
                 <input type="text" id="username" name="username" required>
                 
@@ -36,7 +36,7 @@
         <!-- Registratie Formulier -->
         <div class="registratie-form">
             <h3>Account Aanmaken</h3>
-            <form action="register.php" method="post">
+            <form action="../php/register.php" method="post">
                 <label for="reg_username">Gebruikersnaam:</label>
                 <input type="text" id="reg_username" name="username" required>
                 
