@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dierenvondst</title>
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/styledieren.css">
     <link rel="shortcut icon" href="../img/logo.png" type="image/x-icon">
 </head>
 <body>
@@ -17,6 +18,16 @@
         </div>
     </header>
 
+    <div class="main-content">
+        <div class="categorie-selector">
+            <button onclick="laadDieren('honden')">Honden</button>
+            <button onclick="laadDieren('katten')">Katten</button>
+            <button onclick="laadDieren('vogels')">Vogels</button>
+        </div>
+        
+        <div class="dieren-container" id="dierenContainer">
+           
+        </div>
     </div>
 
     <div class="overlay" id="donatieOverlay">
@@ -44,5 +55,41 @@
     </footer>
 
     <script src="../script/script.js"></script>
+    <script>
+        // JavaScript om dieren te laden
+        function laadDieren(categorie) {
+            fetch('dieren.php?categorie=' + categorie)
+            .then(response => response.json())
+            .then(data => {
+                const dierenContainer = document.getElementById('dierenContainer');
+                dierenContainer.innerHTML = '';
+
+                data.forEach(dier => {
+                    const dierElement = document.createElement('div');
+                    dierElement.classList.add('dier');
+
+                    const naam = document.createElement('h3');
+                    naam.textContent = dier.naam;
+
+                    const foto = document.createElement('img');
+                    foto.src = dier.foto;
+                    foto.alt = dier.naam + ' foto';
+
+                    const info = document.createElement('p');
+                    info.textContent = dier.info;
+
+                    dierElement.appendChild(naam);
+                    dierElement.appendChild(foto);
+                    dierElement.appendChild(info);
+
+                    dierenContainer.appendChild(dierElement);
+                });
+            });
+        }
+
+        // Laad standaard dieren (bijv. honden)
+        laadDieren('honden');
+    </script>
 </body>
 </html>
+

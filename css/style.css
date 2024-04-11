@@ -197,3 +197,49 @@ body {
 .btn-register:hover {
     background-color: #0056b3;
 }
+
+/* Stijl voor dierencontainers */
+.dieren-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 600px;
+}
+
+.dier {
+    width: 300px;
+    margin-bottom: 20px;
+    background-color: #3fa34d;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgb(230, 6, 6);
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+}
+
+.dier:hover {
+    transform: scale(1.05);
+}
+
+.dier img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.dier-content {
+    padding: 20px;
+}
+
+.dier h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.5em;
+    color: #333;
+}
+
+.dier p {
+    margin: 0;
+    color: #555;
+}
