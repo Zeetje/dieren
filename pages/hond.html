@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,55 +10,91 @@
     <link rel="stylesheet" href="../css/styledieren.css">
     <link rel="shortcut icon" href="../img/logo.png" type="image/x-icon">
 </head>
+
 <body>
     <header class="header">
-       <a href="../index.html">  <img class="logo" src="../img/logo.png" alt="Logo"></a>
+        <a href="../index.html"> <img class="logo" src="../img/logo.png" alt="Logo"></a>
         <div class="btn-container">
             <div class="btn" onclick="toonDonatieVenster()">Doneren</div>
-            <a href="../pages/inlog.php" class="btn">Inloggen</a> 
+            <a href="../pages/inlog.php" class="btn">Inloggen</a>
         </div>
     </header>
     <div class="main-content">
         <div class="search-div">
-            <h2> 🐶 Honden 🐶
+            <h2> 🐕 Honden 🐕
 
             </h2>
         </div>
 
-     <div class="container">
-    <div class="row">
-        <div class="box">
-       <a href="../pages/hans.html"> <img src="../img/Hond-gijs.jpg" alt="Image 1"></a>
-            <div class="overlay-text">Rocky</div>
+        <div class="container">
+            <div class="row">
+                <div class="box" onmouseover="toonTekst(this)" onmouseout="verbergTekst(this)">
+                    <a href="../pages/hans.html"> 
+                    <img src="../img/hond.png" alt="Image 1"></a>
+                    <div class="overlay-text">Rocky</div>
+                    <div class="card">Energieke reu, houdt van spelen, zoekt actieve eigenaar.</div>
+                </div>
+                <div class="box" onmouseover="toonTekst(this)" onmouseout="verbergTekst(this)">
+                    <a href="../pages/hans.html"> 
+                    <img src="../img/hond2.jpeg" alt="Image 1"></a>
+                    <div class="overlay-text">Saar</div>
+                  <div class="card"> Lieve teef, houdt van knuffelen, zoekt liefdevol thuis.</div>
+                </div>
+                <div class="box" onmouseover="toonTekst(this)" onmouseout="verbergTekst(this)">
+                    <a href="../pages/hans.html"> 
+                    <img src="../img/hond3.jpeg" alt="Image 1"></a>
+                    <div class="overlay-text">Kees</div>
+                   <div class="card">Stoere reu, vol energie, zoekt liefdevol thuis.</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="box" onmouseover="toonTekst(this)" onmouseout="verbergTekst(this)">
+                    <a href="../pages/hans.html"> 
+                    <img src="../img/hond4.png" alt="Image 1"></a>
+                    <div class="overlay-text">Hans</div>
+                    <div class="card">Charmante reu, houdt van buiten, zoekt actieve eigenaar.</div>
+                </div>
+                <div class="box" onmouseover="toonTekst(this)" onmouseout="verbergTekst(this)">
+                    <a href="../pages/hans.html"> 
+                    <img src="../img/hond5.jpeg" alt="Image 1"></a>
+                    <div class="overlay-text">Vlekje</div>
+                    <div class="card">Ondeugende teef, houdt van avontuur, zoekt gezin.</div>
+                </div>
+                <div class="box" onmouseover="toonTekst(this)" onmouseout="verbergTekst(this)">
+                    <a href="../pages/hans.html"> 
+                    <img src="../img/hond6.jpeg" alt="Image 1"></a>
+                    <div class="overlay-text">Boef</div>
+                    <div class="card">Leuke hond die snel vrienden maakt</div>
+                </div>
+            </div>
         </div>
-        <div class="box">
-            <a href="zoek.html"> <img src="../img/hond.png" alt="Image 1"></a>
-            <div class="overlay-text">Saar</div>
-        </div>
-        <div class="box">
-            <a href="zoek.html"> <img src="../img/hond3.jpeg" alt="Image 1"></a>
-            <div class="overlay-text">Kees</div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="box">
-            <a href="zoek.html"> <img src="../img/hond6.jpeg" alt="Image 1"></a>
-            <div class="overlay-text">Hans</div>
-        </div>
-        <div class="box">
-            <a href="zoek.html"> <img src="../img/hond4.png" alt="Image 1"></a>
-            <div class="overlay-text">Vlekje</div>
-        </div>
-        <div class="box">
-            <a href="zoek.html"> <img src="../img/hond2.jpeg" alt="Image 1"></a>
-            <div class="overlay-text">Boef</div>
-        </div>
-    </div>
-</div>
 
 
+        <script>
+            function toonTekst(element) {
+                let card = element.querySelector(".card");
+                card.style.transform = "translateY(-100%)";
+                card.style.visibility = "visible";
+                
+                let image = element.querySelector(".image");
+                image.style.opacity = "0.5";
+                image.style.filter = "blur(5px)";
+            }
+    
+            function verbergTekst(element) {
+                let card = element.querySelector(".card");
+                card.style.transform = "translateY(0)";
+                card.style.visibility = "hidden";
+                
+                let image = element.querySelector(".image");
+                image.style.opacity = "1";
+                image.style.filter = "blur(0)";
+            }
+        </script>
+        <footer class="footer">
+            &copy; Dierenvondst
+        </footer>
+        
 </body>
+
 </html>
-
-
-

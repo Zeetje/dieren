@@ -28,35 +28,70 @@
 
         <div class="container">
             <div class="row">
-                <div class="box">
-                    <a href="../pages/hans.html"> <img src="../img/knaag1.jpeg" alt="Image 1"></a>
+                <div class="box" onmouseover="toonTekst(this)" onmouseout="verbergTekst(this)">
+                    <a href="../pages/hans.html"> 
+                    <img src="../img/knaag1.jpeg" alt="Image 1"></a>
                     <div class="overlay-text">Rik en Ron</div>
+                   <div class="card">Vrolijke mannenratten, ingeënt, zoeken samen liefdevol thuis.</div>
                 </div>
-                <div class="box">
-                    <a href="zoek.html"> <img src="../img/knaag2.jpeg" alt="Image 1"></a>
-                    <div class="overlay-text">Snuifje</div>
+                <div class="box" onmouseover="toonTekst(this)" onmouseout="verbergTekst(this)">
+                    <a href="../pages/hans.html"> 
+                    <img src="../img/knaag2.jpeg" alt="Image 1"></a>
+                    <div class="overlay-text">Snuifjet</div>
+                   <div class="card"> Charmante rat, speels, zoekt liefdevol thuis.</div>
                 </div>
-                <div class="box">
-                    <a href="zoek.html"> <img src="../img/hamster.png" alt="Image 1"></a>
+                <div class="box" onmouseover="toonTekst(this)" onmouseout="verbergTekst(this)">
+                    <a href="../pages/hans.html"> 
+                    <img src="../img/knaag3.png" alt="Image 1"></a>
                     <div class="overlay-text">Briesje</div>
+                   <div class="card">Rustige hamster, geniet van rad, zoekt rustig huisje.</div>
                 </div>
             </div>
             <div class="row">
-                <div class="box">
-                    <a href="zoek.html"> <img src="../img/knaag3.png" alt="Image 1"></a>
+                <div class="box" onmouseover="toonTekst(this)" onmouseout="verbergTekst(this)">
+                    <a href="../pages/hans.html"> 
+                    <img src="../img/knaag4.jpeg" alt="Image 1"></a>
                     <div class="overlay-text">Zeus</div>
+                   <div class="card">Imposante cavia, zachtaardig, zoekt liefdevol thuis.</div>
                 </div>
-                <div class="box">
-                    <a href="zoek.html"> <img src="../img/kanag6.jpeg" alt="Image 1"></a>
+                <div class="box" onmouseover="toonTekst(this)" onmouseout="verbergTekst(this)">
+                    <a href="../pages/hans.html"> 
+                    <img src="../img/konijn.png" alt="Image 1"></a>
                     <div class="overlay-text">Manu</div>
+                   <div class="card"> Nieuwsgierige fret, energiek, zoekt ervaren eigenaar.</div>
                 </div>
-                <div class="box">
-                    <a href="zoek.html"> <img src="../img/kaag5.jpeg" alt="Image 1"></a>
+                <div class="box" onmouseover="toonTekst(this)" onmouseout="verbergTekst(this)">
+                    <a href="../pages/hans.html"> 
+                    <img src="../img/kanag6.jpeg" alt="Image 1"></a>
                     <div class="overlay-text">Woody</div>
+                   <div class="card">Schattige muis, levendig, zoekt ruim thuis.</div>
                 </div>
             </div>
         </div>
-
+        <script>
+            function toonTekst(element) {
+                let card = element.querySelector(".card");
+                card.style.transform = "translateY(-100%)";
+                card.style.visibility = "visible";
+                
+                let image = element.querySelector(".image");
+                image.style.opacity = "0.5";
+                image.style.filter = "blur(5px)";
+            }
+    
+            function verbergTekst(element) {
+                let card = element.querySelector(".card");
+                card.style.transform = "translateY(0)";
+                card.style.visibility = "hidden";
+                
+                let image = element.querySelector(".image");
+                image.style.opacity = "1";
+                image.style.filter = "blur(0)";
+            }
+        </script>
+<footer class="footer">
+    &copy; Dierenvondst
+</footer>
 
 </body>
 

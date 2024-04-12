@@ -25,36 +25,72 @@
 
         <div class="container">
             <div class="row">
-                <div class="box">
-                    <a href=""> <img src="../img/vogel.png" alt="Image 1"></a>
+                <div class="box" onmouseover="toonTekst(this)" onmouseout="verbergTekst(this)">
+                    <a href=""> 
+                        <img src="../img/vogel.png" alt="Image 1" class="image"></a>
                     <div class="overlay-text">Coco</div>
+                    <div class="card">Kleurrijke papegaai, houdt van interactie en praten.</div>
                 </div>
-                <div class="box">
-                    <a href=""> <img src="../img/vogels1.png" alt="Image 1"></a>
+                <div class="box" onmouseover="toonTekst(this)" onmouseout="verbergTekst(this)">
+                    <a href=""> 
+                        <img src="../img/vogels1.png" alt="Image 1" class="image"></a>
                     <div class="overlay-text">Bella</div>
+                    <div class="card">Prachtige kanarie, houdt van gezelschap en zingen.</div>
                 </div>
-                <div class="box">
-                    <a href=""> <img src="../img/vogels2.png" alt="Image 1"></a>
+                <div class="box" onmouseover="toonTekst(this)" onmouseout="verbergTekst(this)">
+                    <a href=""> 
+                        <img src="../img/vogels2.png" alt="Image 1" class="image"></a>
                     <div class="overlay-text">Mango</div>
+                    <div class="card">Levendige mannelijke parkiet, houdt van vliegen.</div>
                 </div>
             </div>
             <div class="row">
-                <div class="box">
-                    <a href=""> <img src="../img/vogels3.png" alt="Image 1"></a>
+                <div class="box" onmouseover="toonTekst(this)" onmouseout="verbergTekst(this)">
+                    <a href=""> 
+                        <img src="../img/vogels3.png" alt="Image 1" class="image"></a>
                     <div class="overlay-text">Karel</div>
+                    <div class="card">Rustige mannelijke kanarie, geniet van rustige momenten.</div>
                 </div>
-                <div class="box">
-                    <a href=""> <img src="../img/vogels5.png" alt="Image 1"></a>
+                <div class="box" onmouseover="toonTekst(this)" onmouseout="verbergTekst(this)">
+                    <a href=""> 
+                        <img src="../img/vogels5.png" alt="Image 1" class="image"></a>
                     <div class="overlay-text">Sky</div>
+                    <div class="card">Lieve vrouwelijke valkparkiet, houdt van vliegen.</div>
                 </div>
-                <div class="box">
-                    <a href=""> <img src="../img/vogels6.png
-                " alt="Image 1"></a>
+                <div class="box" onmouseover="toonTekst(this)" onmouseout="verbergTekst(this)">
+                    <a href=""> 
+                        <img src="../img/vogels6.png" alt="Image 1" class="image"></a>
                     <div class="overlay-text">Harm</div>
+                    <div class="card">Grappige mannelijke grasparkiet, houdt van vliegen.</div>
                 </div>
             </div>
         </div>
+    </div>
 
+    <script>
+        function toonTekst(element) {
+            let card = element.querySelector(".card");
+            card.style.transform = "translateY(-100%)";
+            card.style.visibility = "visible";
+            
+            let image = element.querySelector(".image");
+            image.style.opacity = "0.5";
+            image.style.filter = "blur(5px)";
+        }
 
+        function verbergTekst(element) {
+            let card = element.querySelector(".card");
+            card.style.transform = "translateY(0)";
+            card.style.visibility = "hidden";
+            
+            let image = element.querySelector(".image");
+            image.style.opacity = "1";
+            image.style.filter = "blur(0)";
+        }
+    </script>
+    <footer class="footer">
+        &copy; Dierenvondst
+    </footer>
+    
 </body>
 </html>

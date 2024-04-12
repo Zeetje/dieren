@@ -1,62 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dierenvondst</title>
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/styledieren.css">
     <link rel="shortcut icon" href="../img/logo.png" type="image/x-icon">
 </head>
+
 <body>
     <header class="header">
-        <a href="../index.html"><img class="logo" src="../img/logo.png" alt="Logo"></a>
+        <a href="../index.html"> <img class="logo" src="../img/logo.png" alt="Logo"></a>
         <div class="btn-container">
             <div class="btn" onclick="toonDonatieVenster()">Doneren</div>
-            <a href="../pages/inlog.php" class="btn">Inloggen</a> 
+            <a href="../pages/inlog.php" class="btn">Inloggen</a>
         </div>
     </header>
     <div class="main-content">
         <div class="search-div">
-            <h2> 🐈 Katten 🐈
+            <h2> 🐈 Katten 🐈 
 
             </h2>
         </div>
 
-     <div class="container">
-    <div class="row">
-        <div class="box">
-       <a href="zoek.html"> <img src="../img/cat1.png" alt="Image 1"></a>
-            <div class="overlay-text">Luna</div>
+        <div class="container">
+            <div class="row">
+                <div class="box" onmouseover="toonTekst(this)" onmouseout="verbergTekst(this)">
+                    <a href="../pages/hans.html"> 
+                    <img src="../img/cat1.png" alt="Image 1"></a>
+                    <div class="overlay-text">Luna</div>
+                    <div class="card">Elegante kat, rustig, zoekt liefdevol thuis.</div>
+                </div>
+                <div class="box" onmouseover="toonTekst(this)" onmouseout="verbergTekst(this)">
+                    <a href="../pages/hans.html"> 
+                    <img src="../img/cat2.png" alt="Image 1"></a>
+                    <div class="overlay-text">Simba</div>
+                  <div class="card">Stoere kat, avontuurlijk, zoekt ruim thuis.</div>
+                </div>
+                <div class="box" onmouseover="toonTekst(this)" onmouseout="verbergTekst(this)">
+                    <a href="../pages/hans.html"> 
+                    <img src="../img/cat3.png" alt="Image 1"></a>
+                    <div class="overlay-text">Bella</div>
+                   <div class="card">Charmante kat, zachtaardig, zoekt rustig thuis..</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="box" onmouseover="toonTekst(this)" onmouseout="verbergTekst(this)">
+                    <a href="../pages/hans.html"> 
+                    <img src="../img/cat4.png" alt="Image 1"></a>
+                    <div class="overlay-text">Milo</div>
+                    <div class="card">Knuffelige kat, speels, zoekt aandacht.</div>
+                </div>
+                <div class="box" onmouseover="toonTekst(this)" onmouseout="verbergTekst(this)">
+                    <a href="../pages/hans.html"> 
+                    <img src="../img/cat5.png" alt="Image 1"></a>
+                    <div class="overlay-text">Nala</div>
+                    <div class="card">Nieuwsgierige kat, energiek, zoekt liefdevol thuis.</div>
+                </div>
+                <div class="box" onmouseover="toonTekst(this)" onmouseout="verbergTekst(this)">
+                    <a href="../pages/hans.html"> 
+                    <img src="../img/cat7.png" alt="Image 1"></a>
+                    <div class="overlay-text">Shakira</div>
+                    <div class="card">Gracieuze kat, avontuurlijk, zoekt ruim thuis.</div>
+                </div>
+            </div>
         </div>
-        <div class="box">
-            <img src="../img/cat2.png" alt="Image 2">
-            <div class="overlay-text">Simba</div>
-        </div>
-        <div class="box">
-            <img src="../img/cat3.png" alt="Image 3">
-            <div class="overlay-text">Bella</div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="box">
-            <img src="../img/cat4.png" alt="Image 4">
-            <div class="overlay-text">Milo</div>
-        </div>
-        <div class="box">
-            <img src="../img/cat5.png" alt="Image 5">
-            <div class="overlay-text">Nala</div>
-        </div>
-        <div class="box">
-            <img src="../img/cat7.png" alt="Image 6">
-            <div class="overlay-text">Shakira</div>
-        </div>
-    </div>
-</div>
 
-<footer class="footer">
-    &copy; Dierenvondst
-</footer>
 
+        <script>
+            function toonTekst(element) {
+                let card = element.querySelector(".card");
+                card.style.transform = "translateY(-100%)";
+                card.style.visibility = "visible";
+                
+                let image = element.querySelector(".image");
+                image.style.opacity = "0.5";
+                image.style.filter = "blur(5px)";
+            }
+    
+            function verbergTekst(element) {
+                let card = element.querySelector(".card");
+                card.style.transform = "translateY(0)";
+                card.style.visibility = "hidden";
+                
+                let image = element.querySelector(".image");
+                image.style.opacity = "1";
+                image.style.filter = "blur(0)";
+            }
+        </script>
+        <footer class="footer">
+            &copy; Dierenvondst
+        </footer>
+        
 </body>
+
 </html>

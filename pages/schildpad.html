@@ -21,43 +21,80 @@
     </header>
     <div class="main-content">
         <div class="search-div">
-            <h2> 🐀 Knaagdieren 🐀
+            <h2> 🐢 Schildpad 🐢
 
             </h2>
         </div>
 
         <div class="container">
             <div class="row">
-                <div class="box">
-                    <a href="../pages/hans.html"> <img src="../img/schild1.jpeg" alt="Image 1"></a>
+                <div class="box" onmouseover="toonTekst(this)" onmouseout="verbergTekst(this)">
+                    <a href="../pages/hans.html"> 
+                    <img src="../img/schild1.jpeg" alt="Image 1"></a>
                     <div class="overlay-text">Speedy</div>
+                    <div class="card">Actieve landschildpad, nieuwsgierig, zoekt ruim thuis.</div>
                 </div>
-                <div class="box">
-                    <a href="zoek.html"> <img src="../img/schild2.jpeg" alt="Image 1"></a>
+                <div class="box" onmouseover="toonTekst(this)" onmouseout="verbergTekst(this)">
+                    <a href="../pages/hans.html"> 
+                    <img src="../img/schild2.jpeg" alt="Image 1"></a>
                     <div class="overlay-text">Greenie</div>
+                  <div class="card">Rustige waterschildpad, zoekt rustig thuis..</div>
                 </div>
-                <div class="box">
-                    <a href="zoek.html"> <img src="../img/schild3.jpeg" alt="Image 1"></a>
+                <div class="box" onmouseover="toonTekst(this)" onmouseout="verbergTekst(this)">
+                    <a href="../pages/hans.html"> 
+                    <img src="../img/schild3.jpeg" alt="Image 1"></a>
                     <div class="overlay-text">Flash</div>
+                   <div class="card">Levendige landschildpad, speels, zoekt uitdaging.</div>
                 </div>
             </div>
             <div class="row">
-                <div class="box">
-                    <a href="zoek.html"> <img src="../img/schild4.jpeg" alt="Image 1"></a>
-                    <div class="overlay-text">Leaf</div>
-                </div>
-                <div class="box">
-                    <a href="zoek.html"> <img src="../img/schild5.jpeg" alt="Image 1"></a>
+                <div class="box" onmouseover="toonTekst(this)" onmouseout="verbergTekst(this)">
+                    <a href="../pages/hans.html"> 
+                    <img src="../img/schild4.jpeg" alt="Image 1"></a>
                     <div class="overlay-text">Geerda</div>
+                    <div class="card">Vriendelijke landschildpad, rustig, zoekt liefde.</div>
                 </div>
-                <div class="box">
-                    <a href="zoek.html"> <img src="../img/schild6.jpeg" alt="Image 1"></a>
+                <div class="box" onmouseover="toonTekst(this)" onmouseout="verbergTekst(this)">
+                    <a href="../pages/hans.html"> 
+                    <img src="../img/schild5.jpeg" alt="Image 1"></a>
+                    <div class="overlay-text">Speedy</div>
+                    <div class="card">Nieuwsgierige landschildpad, zoekt ruimte.</div>
+                </div>
+                <div class="box" onmouseover="toonTekst(this)" onmouseout="verbergTekst(this)">
+                    <a href="../pages/hans.html"> 
+                    <img src="../img/schild6.jpeg" alt="Image 1"></a>
                     <div class="overlay-text">Jack</div>
+                    <div class="card">Kalme landschildpad, geduldig, zoekt rustig thuis.</div>
                 </div>
             </div>
         </div>
 
 
+        <script>
+            function toonTekst(element) {
+                let card = element.querySelector(".card");
+                card.style.transform = "translateY(-100%)";
+                card.style.visibility = "visible";
+                
+                let image = element.querySelector(".image");
+                image.style.opacity = "0.5";
+                image.style.filter = "blur(5px)";
+            }
+    
+            function verbergTekst(element) {
+                let card = element.querySelector(".card");
+                card.style.transform = "translateY(0)";
+                card.style.visibility = "hidden";
+                
+                let image = element.querySelector(".image");
+                image.style.opacity = "1";
+                image.style.filter = "blur(0)";
+            }
+        </script>
+        <footer class="footer">
+            &copy; Dierenvondst
+        </footer>
+        
 </body>
 
 </html>

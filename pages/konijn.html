@@ -27,35 +27,70 @@
 
         <div class="container">
             <div class="row">
-                <div class="box">
-                    <a href="../pages/hans.html"> <img src="../img/konijn1.png" alt="Image 1"></a>
+                <div class="box" onmouseover="toonTekst(this)" onmouseout="verbergTekst(this)">
+                    <a href="../pages/hans.html"> 
+                    <img src="../img/konijn.png" alt="Image 1"></a>
                     <div class="overlay-text">Fizzle</div>
+                   <div class="card">Levendig konijn, speels, zoekt ruim huis.</div>
                 </div>
-                <div class="box">
-                    <a href="zoek.html"> <img src="../img/konijn2.jpeg" alt="Image 1"></a>
+                <div class="box" onmouseover="toonTekst(this)" onmouseout="verbergTekst(this)">
+                    <a href="../pages/hans.html"> 
+                    <img src="../img/konijn1.png" alt="Image 1"></a>
                     <div class="overlay-text">Flappie</div>
+                   <div class="card">Lief konijn, rustig, zoekt liefdevol thuis.</div>
                 </div>
-                <div class="box">
-                    <a href="zoek.html"> <img src="../img/konijn3.jpeg" alt="Image 1"></a>
+                <div class="box" onmouseover="toonTekst(this)" onmouseout="verbergTekst(this)">
+                    <a href="../pages/hans.html"> 
+                    <img src="../img/konijn2.jpeg" alt="Image 1"></a>
                     <div class="overlay-text">Knabbel</div>
+                   <div class="card">Energiek konijn, graaft graag, zoekt actieve eigenaar.</div>
                 </div>
             </div>
             <div class="row">
-                <div class="box">
-                    <a href="zoek.html"> <img src="../img/konijn4.jpeg" alt="Image 1"></a>
+                <div class="box" onmouseover="toonTekst(this)" onmouseout="verbergTekst(this)">
+                    <a href="../pages/hans.html"> 
+                    <img src="../img/konijn3.jpeg" alt="Image 1"></a>
                     <div class="overlay-text">Pukkie</div>
+                   <div class="card">Vriendelijk konijn, rustig, zoekt rustig thuis.</div>
                 </div>
-                <div class="box">
-                    <a href="zoek.html"> <img src="../img/konijn5.jpeg" alt="Image 1"></a>
+                <div class="box" onmouseover="toonTekst(this)" onmouseout="verbergTekst(this)">
+                    <a href="../pages/hans.html"> 
+                    <img src="../img/konijn4.jpeg" alt="Image 1"></a>
                     <div class="overlay-text">Anne</div>
+                   <div class="card">Levendig konijn, speels, zoekt aandacht.</div>
                 </div>
-                <div class="box">
-                    <a href="zoek.html"> <img src="../img/konij6.jpeg" alt="Image 1"></a>
+                <div class="box" onmouseover="toonTekst(this)" onmouseout="verbergTekst(this)">
+                    <a href="../pages/hans.html"> 
+                    <img src="../img/konij6.jpeg" alt="Image 1"></a>
                     <div class="overlay-text">Geert</div>
+                   <div class="card">Nieuwsgierig konijn, avontuurlijk, zoekt ruim thuis.</div>
                 </div>
             </div>
         </div>
-
+        <script>
+            function toonTekst(element) {
+                let card = element.querySelector(".card");
+                card.style.transform = "translateY(-100%)";
+                card.style.visibility = "visible";
+                
+                let image = element.querySelector(".image");
+                image.style.opacity = "0.5";
+                image.style.filter = "blur(5px)";
+            }
+    
+            function verbergTekst(element) {
+                let card = element.querySelector(".card");
+                card.style.transform = "translateY(0)";
+                card.style.visibility = "hidden";
+                
+                let image = element.querySelector(".image");
+                image.style.opacity = "1";
+                image.style.filter = "blur(0)";
+            }
+        </script>
+<footer class="footer">
+    &copy; Dierenvondst
+</footer>
 
 </body>
 
