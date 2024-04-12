@@ -17,79 +17,46 @@
             <a href="../pages/inlog.php" class="btn">Inloggen</a> 
         </div>
     </header>
-
     <div class="main-content">
-        <div class="categorie-selector">
-            <button onclick="laadDieren('honden')">Honden</button>
-            <button onclick="laadDieren('katten')">Katten</button>
-            <button onclick="laadDieren('vogels')">Vogels</button>
+        <div class="search-div">
+            <h2>Honden
+
+            </h2>
         </div>
-        
-        <div class="dieren-container" id="dierenContainer">
-           
+
+     <div class="container">
+    <div class="row">
+        <div class="box">
+       <a href="zoek.html"> <img src="../img/dog3.jpeg" alt="Image 1"></a>
+            <div class="overlay-text">Rocky</div>
         </div>
-    </div>
-
-    <div class="overlay" id="donatieOverlay">
-        <div class="donatie-venster">
-            <h2>Kies een donatiebedrag</h2>
-            <select id="donatieOpties" class="select-donatie">
-                <option value="5">€5</option>
-                <option value="10">€10</option>
-                <option value="20">€20</option>
-                <option value="custom">Zelf kiezen</option>
-            </select>
-
-            <div id="customBedragDiv" class="custom-bedrag-div">
-                <label for="donatieBedrag">Voer het bedrag in:</label>
-                <input type="number" id="donatieBedrag" min="1" placeholder="Voer bedrag in" class="input-custom">
-            </div>
-
-            <button class="annuleren-btn" onclick="verbergDonatieVenster()">Annuleren</button>
-            <button class="doneren-btn" onclick="bedanktVoorDonatie()">Doneren</button>
+        <div class="box">
+            <img src="img/cavia.png" alt="Image 2">
+            <div class="overlay-text">Cavia</div>
+        </div>
+        <div class="box">
+            <img src="img/konijn.png" alt="Image 3">
+            <div class="overlay-text">Konijn</div>
         </div>
     </div>
+    <div class="row">
+        <div class="box">
+            <img src="img/kitten.png" alt="Image 4">
+            <div class="overlay-text">Kat</div>
+        </div>
+        <div class="box">
+            <img src="img/vogel.png" alt="Image 5">
+            <div class="overlay-text">Vogel</div>
+        </div>
+        <div class="box">
+            <img src="img/schildpad.png" alt="Image 6">
+            <div class="overlay-text">Schildpad</div>
+        </div>
+    </div>
+</div>
 
-    <footer class="footer">
-        &copy; Dierenvondst
-    </footer>
 
-    <script src="../script/script.js"></script>
-    <script>
-        // JavaScript om dieren te laden
-        function laadDieren(categorie) {
-            fetch('dieren.php?categorie=' + categorie)
-            .then(response => response.json())
-            .then(data => {
-                const dierenContainer = document.getElementById('dierenContainer');
-                dierenContainer.innerHTML = '';
-
-                data.forEach(dier => {
-                    const dierElement = document.createElement('div');
-                    dierElement.classList.add('dier');
-
-                    const naam = document.createElement('h3');
-                    naam.textContent = dier.naam;
-
-                    const foto = document.createElement('img');
-                    foto.src = dier.foto;
-                    foto.alt = dier.naam + ' foto';
-
-                    const info = document.createElement('p');
-                    info.textContent = dier.info;
-
-                    dierElement.appendChild(naam);
-                    dierElement.appendChild(foto);
-                    dierElement.appendChild(info);
-
-                    dierenContainer.appendChild(dierElement);
-                });
-            });
-        }
-
-        // Laad standaard dieren (bijv. honden)
-        laadDieren('honden');
-    </script>
 </body>
 </html>
+
 
