@@ -2,13 +2,50 @@
 <html>
 <head>
     <title>Inloggen</title>
+   <link rel="stylesheet" href="../css/login.css">
+   <link rel="shortcut icon" href="../img/logo.png" type="image/x-icon">
 </head>
 <body>
-    <h2>Inloggen</h2>
-    <form action="login.php" method="post">
-        Gebruikersnaam: <input type="text" name="username" required><br>
-        Wachtwoord: <input type="password" name="password" required><br>
-        <input type="submit" value="Inloggen">
-    </form>
+
+    <header class="header">
+        <a href="../index.html"><img class="logo" src="../img/logo.png" alt="Logo"></a>
+        <div class="btn-container">
+            <div class="btn" onclick="toonDonatieVenster()">Doneren</div>
+            <a href="pages/login.html" class="btn">Inloggen</a> 
+
+        </div>
+    </header>
+
+    <div class="login-container">
+        <h2>Inloggen</h2>
+        <form>
+            Gebruikersnaam: <input type="text" id="username" required><br>
+            Wachtwoord: <input type="password" id="password" required><br>
+            <input type="button" value="Inloggen" onclick="login()">
+        </form>
+
+        <p id="message" class="message"></p>
+        <p id="success" class="success"></p>
+    </div>
+
+    <script>
+        function login() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            if (username == "admin" && password == "admin") {
+                document.getElementById("message").innerHTML = "";
+                document.getElementById("success").innerHTML = "U bent ingelogd!";
+            } else {
+                document.getElementById("success").innerHTML = "";
+                document.getElementById("message").innerHTML = "Onjuiste gebruikersnaam of wachtwoord!";
+            }
+        }
+    </script>
+
+<footer class="footer">
+    &copy; Dierenvondst
+</footer>
+
 </body>
 </html>
